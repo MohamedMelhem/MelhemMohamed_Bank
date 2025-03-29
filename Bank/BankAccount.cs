@@ -13,7 +13,7 @@ namespace Bank
         {
         }
 
-        public double Balance { get => balance;}
+        public double Balance { get => balance; protected set => balance = value; }
 
         public void Desposit(double amount)
         {
@@ -22,7 +22,10 @@ namespace Bank
         }
 
         public abstract bool Withdraw(double amount);
-
+        public BankCard NewCard(string cardNumber)
+        {
+            return new BankCard(cardNumber, balance, Owner);
+        }
 
 
     }

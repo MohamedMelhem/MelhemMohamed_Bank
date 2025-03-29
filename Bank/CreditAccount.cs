@@ -18,7 +18,12 @@ namespace Bank
 
         public override bool Withdraw(double amount)
         {
-            throw new NotImplementedException();
+            if (Balance-amount >= creditLimit)
+            {
+                Balance -= amount;
+                return true;
+            }
+            return false;
         }
     }
 }

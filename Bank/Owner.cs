@@ -11,5 +11,10 @@ namespace Bank
         string name;
 
         public string Name { get => name; set => name = value; }
+
+        public Owner(string name)
+        {
+            this.name = name;
+        }
     }
 }
