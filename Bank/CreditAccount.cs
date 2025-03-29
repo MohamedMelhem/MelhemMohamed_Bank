@@ -18,7 +18,7 @@ namespace Bank
 
         public override bool Withdraw(double amount)
         {
-            if (Balance-amount >= creditLimit)
+            if (Balance-amount >= -creditLimit)
             {
                 Balance -= amount;
                 return true;

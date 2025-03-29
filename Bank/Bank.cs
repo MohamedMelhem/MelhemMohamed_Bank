@@ -65,9 +65,13 @@ namespace Bank
         public double TotalCreditLimit()
         {
             double totalCredit = 0;
-            foreach (CreditAccount account in accounts)
+            foreach (BankAccount account in accounts)
             {
-                totalCredit += account.CreditLimit;
+                if (account is CreditAccount credit)
+                {
+                    totalCredit += credit.CreditLimit;
+                }
+
 
             }
             return totalCredit;
